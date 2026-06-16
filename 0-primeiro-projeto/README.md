@@ -1,6 +1,7 @@
 # Projeto 0
 ## Resumo
-Há apenas uma exploração das pastas do Angular e do uso do Angular CLI. Não construção de qualquer site. É **SOMENTE** um primeiro projeto em que pude entender como a CLI é utilizada.
+1. Houve inicialmente uma exploração das pastas do Angular e do uso do Angular CLI. OBS: não há uma arquitetura consolidada de arquivos.
+2. Há um estudo de componentização (referenciação, encapsulamento e reuso).
 
 ## Comandos base
 ### Criar componente
