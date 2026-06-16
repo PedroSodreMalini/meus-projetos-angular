@@ -7,11 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './meu-botao.component.css'
 })
 export class MeuBotaoComponent {
-  limpar() {
-    console.log("Método limpar")
-  }
-
   filtrar() {
-    console.log("Filtrar")
+    console.log("Método filtrar")
   }
 }

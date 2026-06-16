@@ -13,12 +13,6 @@
     box-sizing: border-box;
 }
 
-.btn-flat {
-    background-color: var(--white);
-    border: 2px solid var(--primary-orange);
-    color: var(--primary-orange);
-}
-
 .btn-filled {
     background-color: var(--primary-orange);
     border: 2px solid var(--primary-orange);

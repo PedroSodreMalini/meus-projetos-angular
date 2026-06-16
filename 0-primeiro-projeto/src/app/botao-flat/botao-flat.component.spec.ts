@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Comp2Component } from './comp-2.component';
+import { BotaoFlatComponent } from './botao-flat.component';
 
-describe('Comp2Component', () => {
-  let component: Comp2Component;
-  let fixture: ComponentFixture<Comp2Component>;
+describe('BotaoFlatComponent', () => {
+  let component: BotaoFlatComponent;
+  let fixture: ComponentFixture<BotaoFlatComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Comp2Component]
+      imports: [BotaoFlatComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Comp2Component);
+    fixture = TestBed.createComponent(BotaoFlatComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
