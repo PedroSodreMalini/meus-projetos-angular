@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-botao-flat',
   imports: [],
   template: `
     <button class="btn btn-flat" (click)="limpar()">
-      Limpar filtro
+      Limpar filtro {{ counter }}
     </button>
   `,
   styles: `
@@ -30,8 +30,26 @@ import { Component } from '@angular/core';
   }
   `
 })
-export class BotaoFlatComponent {
+export class BotaoFlatComponent implements OnInit, OnDestroy {
+  public counter = 0
+
+  ngOnInit(){
+    console.log("ngOnInit") // roda ao montar o componente
+  }
+  
+  ngOnDestroy(){
+    console.log("ngOnDestroy") // roda ao destruir o componente
+  }
+  
   limpar() {
+    this.counter++;
     console.log("Método limpar")
+  }
+
+  private nome = 'Pedro'
+  private sobrenome = "Sodré"
+
+  get nomecompleto(): string {
+    return this.nome + ' ' + this.sobrenome
   }
 }
