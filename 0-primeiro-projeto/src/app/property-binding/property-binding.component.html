@@ -1,0 +1,9 @@
+<div>
+    <input id="meu-input" (input)="alterarTextoDaVariavel($event)" [value]="texto" [type]="inputType" />
+    <br />
+    <button [disabled]="isDisabled">
+        {{ isDisabled ? "Desabilitado" : "Habilitado" }}
+    </button>
+    <button (click)="habilitar()">Habilitar</button>
+    <button (click)="desabilitar()">Desabilitar</button>
+</div>
