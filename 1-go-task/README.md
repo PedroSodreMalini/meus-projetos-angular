@@ -12,7 +12,7 @@
 6. Gerenciamento de estado(fonte de verdade).
 7. Imutabilidade de dados.
 8. Padronização de nomes e organização de arquivos.
-9. Mobile First e **Tailwind**.
+9. Mobile First e Tailwind.
 10. Angular Material CDK(Dialog e Drag and Drop).
 11. RXJS(Behaviour Subject).
 12. Pipes (AsyncPipe, SlicePipe).
@@ -27,3 +27,6 @@
 3. Criação do fluxo de dados.
 4. Criação da lógica dos componentes.
 5. Persistindo as tarefas em LocalStorage.
+   
+## Observação importante
+O projeto usa angular 19. Num próximo projeto/módulo de estudo será visto o novo angular 22.
