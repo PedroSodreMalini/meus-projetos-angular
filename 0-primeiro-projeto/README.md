@@ -1,6 +1,6 @@
 # Projeto 0
 ## Resumo
-1. Houve inicialmente uma exploração das pastas do Angular e do uso do Angular CLI. OBS: não há uma arquitetura consolidada de arquivos.
+1. Houve inicialmente uma exploração das pastas do Angular e do uso do Angular CLI. OBS: não há uma arquitetura de software consolidada.
 2. Há um estudo de componentização (referenciação, encapsulamento e reuso).
 
 ## Comandos base
