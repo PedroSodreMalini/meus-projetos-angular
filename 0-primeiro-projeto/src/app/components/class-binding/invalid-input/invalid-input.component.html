@@ -1,0 +1,10 @@
+<input
+  type="text"
+  placeholder="Digite algo..."
+  [class.is-invalid]="hasError"
+  (input)="checkInput($event)"
+/>
+
+@if(hasError) {
+    <p class="error-text">O campo não pode estar vazio!</p>
+}

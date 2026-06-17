@@ -1,0 +1,6 @@
+<p [class.hidden]="isHidden">
+    Este texto pode ser ocultado
+</p>
+<button (click)="toggleHidden()">
+    {{ isHidden ? "Mostrar texto" : "Ocultar texto" }}
+</button>
