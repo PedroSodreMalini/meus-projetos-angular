@@ -1,0 +1,17 @@
+.quadrado {
+    width: 50px;
+    height: 50px;
+    background-color: purple;
+    position: relative;
+    transition: left 0.5s ease;
+    margin-top: 20px;
+}
+
+.popup {
+    position: fixed;
+    background-color: lightcoral;
+    padding: 15px;
+    border-radius: 15px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out, top 0.3s ease-out;
+}

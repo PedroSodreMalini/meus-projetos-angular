@@ -1,0 +1,11 @@
+<div class="quadrado" [style.left.%]="posicaoH"></div>
+<div 
+    class="popup"
+    [style.top]="altura + 'vh'"
+    [style.right]="'10px'"    
+>
+    Popup Dinâmico
+</div>
+
+<button (click)="moverQuadrado()">Mover quadrado</button>
+<button (click)="togglePopup()">Toggle Popup</button>
