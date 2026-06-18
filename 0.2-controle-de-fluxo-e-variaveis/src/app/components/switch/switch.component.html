@@ -1,0 +1,27 @@
+<h2>SWITCH COMPONENT</h2>
+@switch (userRole) {
+@case ('admin') {
+    <div>
+        <h3>Painel de Administrador</h3>
+        <p>Acesso total ao sistema.</p>
+        <button>Gerenciar Usuários</button>
+    </div>
+} @case ("editor") {
+    <div>
+        <h3>Painel de Editor.</h3>
+        <p>Pode criar e editar conteúdo.</p>
+        <button>Novo artigo</button>
+    </div>
+} @default {
+    <div>
+        <h3>Painel de Visualizador</h3>
+        <p>Apenas pode visualizar o conteúdo.</p>
+        <button>Ver artigos</button>
+    </div>
+}
+}
+<div style="margin-top: 16px;">
+    <button (click)="setUserRole('admin')">Admin</button>
+    <button (click)="setUserRole('editor')">Editor</button>
+    <button (click)="setUserRole('user')">User</button>
+</div>
