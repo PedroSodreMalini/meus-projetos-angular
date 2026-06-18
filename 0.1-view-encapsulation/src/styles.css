@@ -1,0 +1,9 @@
+:root {
+    --primary-color: orange;
+    --secondary-color: gray;
+    --border-color: #abcdef;
+}
+
+p {
+    color: blue;
+}
