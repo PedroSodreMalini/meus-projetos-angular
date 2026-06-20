@@ -1,0 +1,6 @@
+.container {
+    background-image: url("/images/rocketseat.jpeg");
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+}

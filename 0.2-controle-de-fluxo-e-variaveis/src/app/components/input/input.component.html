@@ -1,0 +1,18 @@
+<h2>Testando Input() e Output()</h2>
+@let quantidadePessoas = pegarQuantidadePessoas();
+
+@if(quantidadePessoas) {
+    <h3>Existem pessoas: {{ quantidadePessoas }}</h3>
+    @for(p of pessoas; track p.id){
+        <app-pessoa [pessoa]="p" (removerPessoaEmit)="removerPessoaEspecifica($event)" />
+    }
+} @else {
+    <h3>Sem pessoas</h3>
+}
+
+<button (click)="removerPessoa()">
+    Remover pessoa
+</button>
+<button (click)="mudarNome()">
+    Mudar nome
+</button>

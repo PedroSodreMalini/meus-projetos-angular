@@ -11,7 +11,7 @@ Estudo de comunicação entre componentes. Estudo de controle de fluxo e variáv
 6. @Output
 7. ngOnChanges
 8. ngOnInit
-9. COnstructor
+9. Constructor
 
 ## Como rodar
 ```bash
