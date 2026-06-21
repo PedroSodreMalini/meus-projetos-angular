@@ -17,10 +17,16 @@
           src="images/icon-comments.svg"
           alt="Ícone de comentário"
         />
-        <p class="font-semibold text-xs text-[#2a89ef] underline underline-offset-2 cursor-pointer">
+        <p
+          (click)="openTaskCommentsModal()" 
+          class="font-semibold text-xs text-[#2a89ef] underline underline-offset-2 
+          cursor-pointer">
             2 comentários
         </p>
-        <p class="font-semibold text-xs text-[#2a89ef] underline underline-offset-2 cursor-pointer ml-auto">
+        <p
+          (click)="openEditTaskModal()" 
+          class="font-semibold text-xs text-[#2a89ef] underline underline-offset-2 
+        cursor-pointer ml-auto">
             Editar
         </p>
     </div>

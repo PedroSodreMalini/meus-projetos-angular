@@ -1,6 +1,13 @@
 <div class="mb-6 flex overflow-x-auto scrollbar-hidden">
     <!-- Coluna a Fazer -->
-    <div class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6">
+    <div 
+      class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6"
+      cdkDropList
+      #todoListCdkDropList="cdkDropList"
+      [cdkDropListData]="todoTasks"
+      [cdkDropListConnectedTo]="[doingListCdkDropList, doneListCdkDropList]"
+      (cdkDropListDropped)="drop($event)"
+    >
         <div class="py-2 border-b border-[#d1d5db] flex items-center gap-1">
             <h2 class="font-bold">
                 A fazer
@@ -10,13 +17,20 @@
             </span>
         </div>
         <div class="flex flex-col gap-4">
-            <app-task-card />
-            <app-task-card />
-            <app-task-card />
+            @for(task of todoTasks; track task.id) {
+                <app-task-card cdkDrag />
+            }
         </div>
     </div>
     <!-- Coluna Fazendo -->
-    <div class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6">
+    <div 
+      class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6"
+      cdkDropList
+      #doingListCdkDropList="cdkDropList"
+      [cdkDropListData]="doingTasks"
+      [cdkDropListConnectedTo]="[todoListCdkDropList, doneListCdkDropList]"
+      (cdkDropListDropped)="drop($event)"
+    >
         <div class="py-2 border-b border-[#d1d5db] flex items-center gap-1">
             <h2 class="font-bold">
                 Fazendo
@@ -26,12 +40,20 @@
             </span>
         </div>
         <div class="flex flex-col gap-4">
-            <app-task-card />
-            <app-task-card />
+            @for(task of doingTasks; track task.id){
+                <app-task-card cdkDrag />
+            }
         </div>
     </div>
     <!-- Coluna concluído -->
-    <div class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6">
+    <div 
+      class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6"
+      cdkDropList
+      #doneListCdkDropList="cdkDropList"
+      [cdkDropListData]="doneTasks"
+      [cdkDropListConnectedTo]="[doingListCdkDropList, todoListCdkDropList]"
+      (cdkDropListDropped)="drop($event)"
+    >
         <div class="py-2 border-b border-[#d1d5db] flex items-center gap-1">
             <h2 class="font-bold">
                 Concluído
@@ -41,7 +63,9 @@
             </span>
         </div>
         <div class="flex flex-col gap-4">
-            <app-task-card />
+            @for(task of doneTasks; track task.id){
+                <app-task-card cdkDrag />
+            }
         </div>
     </div>
 </div>

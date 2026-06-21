@@ -13,7 +13,11 @@
                 Não se esqueça de atualizar as tarefas
             </h3>
         </div>
-        <button class="bg-[#2a89ef] w-fit shadow-md flex gap-2 shadow-blue-500/30 py-3 px-4 rounded-xl text-white text-sm font-semibold text-center cursor-pointer active:translate-y-1 transition-transform duration-75">
+        <button
+          (click)="openNewTaskModal()" 
+          class="bg-[#2a89ef] w-fit shadow-md flex gap-2 shadow-blue-500/30 py-3 
+        px-4 rounded-xl text-white text-sm font-semibold text-center cursor-pointer 
+        active:translate-y-1 transition-transform duration-75">
             <img src="images/icon-plus-circle.svg" />
             Criar uma tarefa
         </button>
