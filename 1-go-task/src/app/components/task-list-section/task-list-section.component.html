@@ -1,1 +1,47 @@
-<p>task-list-section works!</p>
+<div class="mb-6 flex overflow-x-auto scrollbar-hidden">
+    <!-- Coluna a Fazer -->
+    <div class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6">
+        <div class="py-2 border-b border-[#d1d5db] flex items-center gap-1">
+            <h2 class="font-bold">
+                A fazer
+            </h2>
+            <span class="bg-black py-1 px-2 rounded-xl text-white text-xs font-semibold">
+                1
+            </span>
+        </div>
+        <div class="flex flex-col gap-4">
+            <app-task-card />
+            <app-task-card />
+            <app-task-card />
+        </div>
+    </div>
+    <!-- Coluna Fazendo -->
+    <div class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6">
+        <div class="py-2 border-b border-[#d1d5db] flex items-center gap-1">
+            <h2 class="font-bold">
+                Fazendo
+            </h2>
+            <span class="bg-[#ff850a] py-1 px-2 rounded-xl text-white text-xs font-semibold">
+                0
+            </span>
+        </div>
+        <div class="flex flex-col gap-4">
+            <app-task-card />
+            <app-task-card />
+        </div>
+    </div>
+    <!-- Coluna concluído -->
+    <div class="flex-1 py-3 px-6 min-w-60 flex flex-col gap-6">
+        <div class="py-2 border-b border-[#d1d5db] flex items-center gap-1">
+            <h2 class="font-bold">
+                Concluído
+            </h2>
+            <span class="bg-[#15be78] py-1 px-2 rounded-xl text-white text-xs font-semibold">
+                0
+            </span>
+        </div>
+        <div class="flex flex-col gap-4">
+            <app-task-card />
+        </div>
+    </div>
+</div>
