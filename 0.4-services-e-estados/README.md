@@ -2,6 +2,8 @@
 
 ## Resumo
 Estudo de services e de gerenciamento de estados.
+1. Exemplo 1: Services em geral.
+2. Exemplo 2: Pub-Sub.
 
 ## Conceitos:
 - O que são Services.

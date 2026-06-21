@@ -1,0 +1,7 @@
+@for (p of (_productsService.products$ | async); track p.id) {
+<div style="padding: 15px;">
+    <p>Id: {{ p.id }}</p>
+    <p>Nome: {{ p.nome }}</p>
+    <p>Preço: {{ p.preco }}</p>
+</div>
+}
