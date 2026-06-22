@@ -5,6 +5,7 @@ import { ITask } from '../interfaces/task.interface';
 import { BehaviorSubject, map } from 'rxjs';
 import { generateUniqueId } from '../utils/generate-unique-id';
 import { TaskStatus } from '../types/task-status.type';
+import { IComment } from '../interfaces/comments.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,7 @@ export class TaskService {
     const nextTaskList = this.getTaskListByStatus(nextStatus)
 
     const currentTask = currentTaskList.value.find((t) => t.id === taskId)
+    console.log(currentTask?.comments)
 
     if(currentTask) {
       // Atualiza status da tarefa.
@@ -78,6 +80,17 @@ export class TaskService {
     const taskList = this.getTaskListByStatus(taskStatus)
 
     taskList.next(taskList.value.filter((t) => t.id !== taskId))
+  }
+
+  updateTaskComments(taskId: string, taskStatus: TaskStatus, newTaskComments: IComment[]) {
+    const taskList = this.getTaskListByStatus(taskStatus)
+
+    taskList.next(taskList.value.map((t) => {
+      if(t.id === taskId) {
+        t.comments = structuredClone(newTaskComments)
+      }
+      return t
+    }))
   }
 
   private getTaskListByStatus(taskStatus: TaskStatus) {
