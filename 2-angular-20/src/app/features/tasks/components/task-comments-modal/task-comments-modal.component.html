@@ -1,0 +1,78 @@
+<div class="rounded-xl overflow-scroll bg-white max-h-200 scrollbar-hidden">
+    <div class="p-4 flex gap-1">
+        <img 
+          src="images/icon-task-star.svg"
+        />
+        <h2 class="text-lg font-semibold">
+            Comentar tarefa
+        </h2>
+        <img 
+          src="images/icon-close.svg"
+          class="ml-auto cursor-pointer"
+          (click)="onCloseModal()"
+        />
+    </div>
+    <div class="p-4 flex flex-col border-t border-[#d1d5db]">
+        <h2 class="font-semibold text-lg mb-4">
+            {{ _task.name }}
+        </h2>
+        <p class="font-semibold text-sm mb-2">
+            Descrição
+        </p>
+        <p class="font-normal text-base text-[#374151] text-justify">
+            {{ _task.description }}
+        </p>
+    </div>
+    <div class="p-4">
+        <div class="bg-[#f3f4f6] rounded-xl p-5 flex flex-col gap-5">
+            <!-- Título -->
+            <div>
+                <p class="font-bold text-sm">
+                    Comentários
+                </p>
+            </div>
+            <!-- Criar comentário -->
+            <div class="flex items-start gap-2">
+                <div class="flex flex-col w-full">
+                    <input
+                      [formControl]="commentControl"
+                      type="text"
+                      class="rounded-lg border vorder-[#d1d5db] p-3 bg-white flex-1 text-sm 
+                      font-light"
+                      placeholder="Adicione um comentário"
+                    />
+                </div>
+                <button
+                  #commentInput
+                  type="button"
+                  class="py-3 px-4 bg-[#2a89ef] text-white rounded-xl text-sm font-semibold 
+                  cursor-pointer active:translate-y-1 transition-transform duration-75 
+                  shadow-md shadow-blue-500/50 disabled:opacity-60 disabled:cursor-not-allowed"
+                  [disabled]="commentControl.invalid"
+                  (click)="onAddComment()"
+                >
+                  Adicionar
+                </button>
+            </div>
+            <!-- Comentários -->
+            <div class="flex flex-col gap-5 overflow-scroll max-h-44 scrollbar-hidden">
+                @for(comment of _task.comments; track comment.id;){
+                <div class="flex flex-col gap-3 not-last:pb-3 not-last:border-b not-last:border-[#d1d5db]">
+                    <div>
+                        <p class="font-light text-sm text-[#374151]">
+                            {{ comment.description }}
+                        </p>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <p
+                          (click)="onRemoveComment(comment.id)"
+                          class="font-semibold text-xs underline underline-offset-2 cursor-pointer">
+                            Apagar
+                        </p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
