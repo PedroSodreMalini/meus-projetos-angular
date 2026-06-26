@@ -1,0 +1,107 @@
+<div class="flex flex-col gap-2">
+  <div>
+    <h2>Slice Pipe</h2>
+    <h3>Para textos</h3>
+    <p>Palavra total: {{ sliceP }}</p>
+    <p>De 0 até 3: {{ sliceP | slice: 0 : 3 }}</p>
+    <p>De 2 até 5: {{ sliceP | slice: 2 : 5 }}</p>
+    <p>Começando de -4: {{ sliceP | slice : -4}}</p>
+    <p>Começando de 1: {{ sliceP | slice : 1 }}</p>
+    <h3>Para arrays</h3>
+    <p>Array total: {{ produtos }}</p>
+    <p>De 0 até 3: {{ produtos | slice:0:3 }}</p>
+    <p>De 2 até 5: {{ produtos | slice:2:5 }}</p>
+    <p>Começando de -4: {{ produtos | slice:-4 }}</p>
+    <p>Começando de 1: {{ produtos | slice:1 }}</p>
+  </div>
+  <div>
+    <h2>Lower Case Pipe</h2>
+    <p>Palavra: {{ word }}</p>
+    <p>Lower case: {{ word | lowercase }}</p>
+  </div>
+  <div>
+    <h2>Upper Case Pipe</h2>
+    <p>Palavra: {{ word }}</p>
+    <p>Upper case: {{ word | uppercase }}</p>
+  </div>
+  <div>
+    <h2>Title Case Pipe</h2>
+    <p>Palavra: {{ palavra }}</p>
+    <p>Title case: {{ palavra | titlecase }}</p>
+  </div>
+  <div>
+    <h2>Json Pipe</h2>
+    <h3>Array</h3>
+    <p>Array: {{ produtos }}</p>
+    <p>JSON String: {{ produtos | json }}</p>
+    <h3>Objeto</h3>
+    <p>Objeto: {{ objeto }}</p>
+    <p>JSON String: {{ objeto | json }}</p>
+  </div>
+  <div>
+    <h2>Percent Pipe</h2>
+    <h3>Sem locale</h3>
+    <p>Valor: {{ npercentage }}</p>
+    <p>Pipe puro: {{ npercentage | percent }}</p>
+    <p>Pipe 3 dígitos antes da vírgula: {{ npercentage | percent : '3.' }}</p>
+    <p>Pipe 5 dígitos após a vírgula: {{ npercentage | percent : '.5-5' }}</p>
+    <p>Pipe 3 dígitos após a vírgula, 10 depois: {{ npercentage | percent : '3.10-10' }}</p>
+    <h3>Com locale</h3>
+    <p>USA: {{ npercentage | percent : '2.4-4' }}</p>
+    <p>BRA: {{ npercentage | percent : '2.4-4' : 'pt-BR' }}</p>
+  </div>
+  <div>
+    <h2>Decimal Pipe</h2>
+    <p>Valor: {{ npercentage }}</p>
+    <p>Sem número antes da vírgula: {{ npercentage | number : '0.3-10'}}</p>
+    <p>Sem número após a vírgula: {{ npercentage | number : '.0-0'}}</p>
+    <p>4 números após a vírgula(arredonda para dígito faltantte >= 5): {{ npercentage | number : '.0-4'}}</p>
+    <p>USA: {{ npercentage | number : '4.0-6'}}</p>
+    <p>BRA: {{ npercentage | number : '4.0-6' : 'pt-BR'}}</p>
+  </div>
+  <div>
+    <h2>Currency Pipe</h2>
+    <h3>Currency Code</h3>
+    <p>Valor: {{ preco }}</p>
+    <p>Estados Unidos: {{ preco | currency }}</p>
+    <p>Brasil: {{ preco | currency : 'BRL' }}</p>
+    <h3>Display</h3>
+    <p>Brasil (symbol - é o default): {{ preco | currency : 'BRL' }}</p>
+    <p>Brasil (code): {{ preco | currency : 'BRL' : 'code' }}</p>
+    <p>Brasil (symbol-narrow - não tem pra Brasil, mas tem pra Canadá): {{ preco | currency : 'BRL' : 'symbol-narrow' }}</p>
+    <h3>Dígitos</h3>
+    <p>Brasil: {{ preco | currency : 'BRL' : 'symbol' }}</p>
+    <p>Brasil 5 digitos na parte inteira: {{ preco | currency : 'BRL' : 'symbol' : '5.2-2' }}</p>
+    <p>Brasil 5 dígitos decimais: {{ preco | currency : 'BRL' : 'symbol' : '.5-5'}}</p>
+    <h3>Locale</h3>
+    <p>Brasil formatação americana (default): {{ preco | currency : 'BRL' : 'symbol' : '0.0' }}</p>
+    <p>Brasil formatação brasileira: {{ preco | currency : 'BRL' : 'symbol' : '0.0' : 'pt-BR' }}</p>
+  </div>
+  <div>
+    <h2>Date Pipe</h2>
+    <h3>Formatação</h3>
+    <p>Data - valor padrão: {{ data_atual | date }}</p>
+    <p>Formatação short: {{ data_atual | date : 'short'}}</p>
+    <p>Formatação medium: {{ data_atual | date : 'medium'}}</p>
+    <p>Formatação full: {{ data_atual | date : 'full'}}</p>
+    <p>Formatação fullDate: {{ data_atual | date : 'fullDate'}}</p>
+    <p>Formatação fullTime: {{ data_atual | date : 'fullTime'}}</p>
+    <p>Formatação personalizada: {{ data_atual | date : 'dd/MMM/y - hh:mm:ss'}}</p>
+    <p style="color: lightcoral;">OBS: Há vários padrões na documentação</p>
+    <h3>Timezone - Offset</h3>
+    <p>Data - valor padrão: {{ data_atual | date }}</p>
+    <p>Data - offset +3 (Istambul): {{ data_atual | date : 'full' : '+03:00' }}</p>
+    <p>Data - offset -3 (São Paulo): {{ data_atual | date : 'full' : '-03:00' }}</p>
+    <p>Data - offset -03:33 em relação a Z: {{ data_atual | date : 'full' : '-03:33' }}</p>
+    <h3>Locale</h3>
+    <p>Data - valor padrão: {{ data_atual | date }}</p>
+    <p>Data BR (padrão en-US) {{ data_atual | date : 'full' : undefined : undefined }}</p>
+    <p>Data BR (com locale): {{ data_atual | date : 'full' : '-03:00' : 'pt-BR'}}</p>
+  </div>
+  <div>
+    <h2>Custom Pipe</h2>
+    <h3>Usuários (nome e status)</h3>
+    <app-custom-pipe />
+  </div>
+</div>
+
