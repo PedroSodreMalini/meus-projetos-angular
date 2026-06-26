@@ -126,10 +126,15 @@
   </div>
   <div>
     <h2>I18nSelectPipe</h2>
-    <p>Escolha: {{ genderOption | i18nSelect:genderObject }}</p>
+    <p>Escolha female: {{ 'female' | i18nSelect:genderObject }}</p>
+    <p>Escolha male: {{ 'male' | i18nSelect:genderObject }}</p>
+    <p>Escolha outra: {{ 'qualquer coisa' | i18nSelect:genderObject }}</p>
   </div>
   <div>
-    I18nPluralPipe
+    <h2>I18nPluralPipe</h2>
+    <p>0 mensagens: {{ [].length | i18nPlural:messageMapping }}</p>
+    <p>1 mensagem: {{ ['m1'].length | i18nPlural:messageMapping }}</p>
+    <p>2 ou + mensagens: {{ ['m1', 'm2'].length | i18nPlural:messageMapping }}</p>
   </div>
 </div>
 

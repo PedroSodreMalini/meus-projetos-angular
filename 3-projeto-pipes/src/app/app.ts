@@ -59,11 +59,16 @@ export class App {
   preco = 1200.99
   data_atual = new Date();
 
-  genderOption = 'female'
   genderObject = {
     male: "Chamá-lo",
     female: "Chamá-la",
     other: "Chamar"
+  }
+
+  messageMapping = {
+    '=0': 'No messages',
+    '=1': 'One message',
+    'other': "Many messages"
   }
 
   greatestFirst(a: KeyValue<string, number>, b: KeyValue<string, number>) {
