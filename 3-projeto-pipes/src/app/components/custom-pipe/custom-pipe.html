@@ -1,5 +1,5 @@
 <div>
-    @for(user of userService.getUser() | async; track user.name) {
+    @for(user of userService.getUsers() | async; track user.name) {
         <div>
             <p>Nome: {{ user.name }}</p>
             <p>Status: {{ user.status | userStatus }}</p>

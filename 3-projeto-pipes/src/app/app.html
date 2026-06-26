@@ -100,8 +100,36 @@
   </div>
   <div>
     <h2>Custom Pipe</h2>
-    <h3>Usuários (nome e status)</h3>
+    <h3>Usuários | nome e status(0 -> Inativo, 1 -> Ativo)</h3>
     <app-custom-pipe />
+  </div>
+  <div>
+    <h2>Key Value Pipe</h2>
+    <h3>Sobre objetos</h3>
+    @for(item of objeto2 | keyvalue; track item.key) {
+      <div>
+        <p>Chave: {{ item.key }} | Valor: {{ item.value }}</p>
+      </div>
+    }
+    <h3>Sobre Map</h3>
+    @for(item of map | keyvalue; track item.key ) {
+      <div>
+        <p>Chave: {{ item.key }} | Valor: {{ item.value }}</p>
+      </div>
+    }
+    <h3>Com parâmetro de ordenação</h3>
+    @for(item of map | keyvalue:greatestFirst; track item.key ) {
+      <div>
+        <p>Chave: {{ item.key }} | Valor: {{ item.value }}</p>
+      </div>
+    }
+  </div>
+  <div>
+    <h2>I18nSelectPipe</h2>
+    <p>Escolha: {{ genderOption | i18nSelect:genderObject }}</p>
+  </div>
+  <div>
+    I18nPluralPipe
   </div>
 </div>
 

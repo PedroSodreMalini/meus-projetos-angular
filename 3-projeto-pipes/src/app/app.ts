@@ -1,4 +1,18 @@
-import { CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, LowerCasePipe, PercentPipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { 
+  CurrencyPipe,
+  DatePipe,
+  DecimalPipe,
+  I18nPluralPipe,
+  I18nSelectPipe,
+  JsonPipe,
+  KeyValue,
+  KeyValuePipe,
+  LowerCasePipe,
+  PercentPipe,
+  SlicePipe,
+  TitleCasePipe,
+  UpperCasePipe,
+} from '@angular/common';
 import { Component } from '@angular/core';
 import { CustomPipe } from './components/custom-pipe/custom-pipe';
 
@@ -15,6 +29,9 @@ import { CustomPipe } from './components/custom-pipe/custom-pipe';
     CurrencyPipe, // é possível mudar a moeda padrão no app.config tendo o locale.
     DatePipe,
     CustomPipe,
+    KeyValuePipe,
+    I18nSelectPipe,
+    I18nPluralPipe,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -28,7 +45,28 @@ export class App {
     name: "Pedro",
     surname: "Malini",
   }
+  objeto2 = {
+    cidade: "Salvador",
+    estado: "Bahia",
+    pais: "Brasil",
+  }
+  map = new  Map<string, number>([
+    ['Computador', 25.00],
+    ['Playstation', 4500.99],
+    ['Xbox', 5000]
+  ])
   npercentage = 0.123456
   preco = 1200.99
   data_atual = new Date();
+
+  genderOption = 'female'
+  genderObject = {
+    male: "Chamá-lo",
+    female: "Chamá-la",
+    other: "Chamar"
+  }
+
+  greatestFirst(a: KeyValue<string, number>, b: KeyValue<string, number>) {
+    return b.value - a.value;
+  }
 }
